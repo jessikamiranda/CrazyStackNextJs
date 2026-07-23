@@ -49,6 +49,7 @@
 }
 
 :root {
+  --gradient: linear-gradient(to top left, #9795f0, #fbc8d4);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -84,6 +85,7 @@
 }
 
 .dark {
+  --gradient: linear-gradient(to top left, #9795f0, #fbc8d4);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -119,12 +121,22 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
+    @apply border-border outline-ring/50 antialiased;
   }
   html {
-    @apply font-sans;
+    @apply h-full font-sans;
   }
+  body {
+    @apply h-full bg-background text-foreground;
+  }
+}
+
+/* Classe personalizada que o professor usou */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
