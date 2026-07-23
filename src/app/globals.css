@@ -4,6 +4,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* === SUAS CONFIGURAÇÕES DE TEMA (O que estava no tailwind.config.ts) === */
+@theme {
+  /* Suas fontes personalizadas */
+  --font-logo: var(--font-league-spartan);
+  --font-inter: var(--font-inter);
+
+  /* Suas cores customizadas do projeto */
+  --color-tertiary: #3ee360;
+  --color-belezix: #5932b7;
+}
+
+/* Integração de variáveis do Shadcn/UI com Tailwind v4 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -131,12 +143,11 @@
   }
 }
 
-/* Classe personalizada que o professor usou */
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  display: none;
 }
